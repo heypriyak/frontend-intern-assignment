@@ -4,7 +4,8 @@ function fetchWithToken(path, opts={}){
   const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
   const headers = { 'Content-Type': 'application/json' };
   if (token) headers['Authorization'] = `Bearer ${token}`;
-  return fetch('http://localhost:5000' + path, { headers, ...opts });
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+  return fetch(apiUrl + path, { headers, ...opts });
 }
 
 export default function Dashboard(){

@@ -19,7 +19,8 @@ export default function Login() {
     if (password.length < 6) return setErrors({ password: 'Password must be 6+ chars' });
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/v1/auth/login', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+      const res = await fetch(`${apiUrl}/api/v1/auth/login`, {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });

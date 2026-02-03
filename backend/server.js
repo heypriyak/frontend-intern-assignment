@@ -17,20 +17,11 @@ async function connectDB() {
   const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/scalable-webapp';
   try {
     await mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
-    console.log('MongoDB connected');
+    console.log('MongoDB connected successfully');
   } catch (err) {
     console.error('MongoDB connection error:', err.message || err);
-    console.log('Falling back to in-memory MongoDB (development)...');
-    try {
-      const { MongoMemoryServer } = require('mongodb-memory-server');
-      const mongod = await MongoMemoryServer.create();
-      const uri = mongod.getUri();
-      await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-      console.log('Connected to in-memory MongoDB');
-    } catch (memErr) {
-      console.error('In-memory MongoDB failed to start:', memErr);
-      process.exit(1);
-    }
+    console.error('Please set MONGODB_URI environment variable');
+    process.exit(1);
   }
 }
 
@@ -47,7 +38,8 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 connectDB().then(() => {
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
 }).catch(err => {
   console.error('Failed to start server:', err);
+  process.exit(1);
 });
