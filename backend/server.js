@@ -14,13 +14,13 @@ app.use(express.json());
 app.use(rateLimit({ windowMs: 60 * 1000, max: 120 }));
 
 async function connectDB() {
-  const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/scalable-webapp';
+  const mongoUri = process.env.MONGO_URI || process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/scalable-webapp';
   try {
     await mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
     console.log('MongoDB connected successfully');
   } catch (err) {
     console.error('MongoDB connection error:', err.message || err);
-    console.error('Please set MONGODB_URI environment variable');
+    console.error('Please set MONGO_URI or MONGODB_URI environment variable');
     process.exit(1);
   }
 }
