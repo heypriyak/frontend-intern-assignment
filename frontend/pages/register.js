@@ -44,18 +44,40 @@ export default function Register() {
 
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center relative z-10">
           <div className="hidden md:block space-y-6 animate-fadeIn">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-sm font-semibold shadow-lg animate-pulse-slow">🚀 Secure Notes</div>
+            {/* Developer Code Visual */}
+            <div className="absolute -left-10 top-10 text-purple-500/10 text-8xl font-mono animate-float">npm</div>
+            <div className="absolute -left-8 bottom-32 text-indigo-500/10 text-6xl font-mono animate-float" style={{animationDelay: '2s'}}>API</div>
+            
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-sm font-semibold shadow-lg animate-pulse-slow">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/></svg>
+              Full-Stack Developer Project
+            </div>
+            
             <h1 className="text-5xl font-extrabold bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent leading-tight">Create your account and keep tasks in sync</h1>
             <p className="text-slate-600 text-lg">Fast auth, clean UI, and a focused flow built for interns and builders alike.</p>
-            <div className="flex flex-wrap gap-3 text-sm">
-              <div className="group px-4 py-3 rounded-xl bg-white/80 backdrop-blur shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-default border border-purple-100">
-                <span className="text-purple-600 font-semibold">🔐 JWT Auth</span>
-              </div>
-              <div className="group px-4 py-3 rounded-xl bg-white/80 backdrop-blur shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-default border border-blue-100">
-                <span className="text-blue-600 font-semibold">🛡️ Secure by default</span>
-              </div>
-              <div className="group px-4 py-3 rounded-xl bg-white/80 backdrop-blur shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-default border border-indigo-100">
-                <span className="text-indigo-600 font-semibold">📱 Responsive</span>
+            
+            {/* Security Features */}
+            <div className="space-y-3">
+              <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Enterprise Security</p>
+              <div className="flex flex-wrap gap-3 text-sm">
+                <div className="group px-4 py-3 rounded-xl bg-white/80 backdrop-blur shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-default border border-purple-100">
+                  <div className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/></svg>
+                    <span className="text-purple-600 font-semibold">JWT Auth</span>
+                  </div>
+                </div>
+                <div className="group px-4 py-3 rounded-xl bg-white/80 backdrop-blur shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-default border border-blue-100">
+                  <div className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                    <span className="text-blue-600 font-semibold">Bcrypt Hash</span>
+                  </div>
+                </div>
+                <div className="group px-4 py-3 rounded-xl bg-white/80 backdrop-blur shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all cursor-default border border-indigo-100">
+                  <div className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clipRule="evenodd"/></svg>
+                    <span className="text-indigo-600 font-semibold">REST API</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
