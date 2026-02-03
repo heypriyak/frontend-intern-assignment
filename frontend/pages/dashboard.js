@@ -144,9 +144,15 @@ export default function Dashboard(){
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 opacity-0 hover:opacity-100 transition-opacity duration-700"></div>
           <div className="relative px-6 py-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-1">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">📝</span>
-                <p className="text-xs uppercase tracking-[0.3em] opacity-90 font-bold">Notes Dashboard</p>
+              <div className="flex items-center gap-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur text-xs font-bold uppercase tracking-[0.3em]">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-md bg-white/20 text-white font-extrabold">NF</span>
+                  NoteFlow
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">📝</span>
+                  <p className="text-xs uppercase tracking-[0.3em] opacity-90 font-bold">Notes Dashboard</p>
+                </div>
               </div>
               <h1 className="text-3xl font-extrabold">Stay on top of your tasks</h1>
               {profile && <div className="text-sm opacity-95 flex items-center gap-2">
