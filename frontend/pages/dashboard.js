@@ -138,23 +138,44 @@ export default function Dashboard(){
   const pillActive = 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow';
 
   return (
-    <div className={`min-h-screen p-6 ${secondaryBg}`}>
+    <div className={`min-h-screen p-6 ${secondaryBg} transition-colors duration-300`}>
       <div className="max-w-5xl mx-auto">
-        <header className="mb-8 rounded-2xl shadow-lg overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white">
-          <div className="px-6 py-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] opacity-80">Notes Dashboard</p>
-              <h1 className="text-2xl font-bold">Stay on top of your tasks</h1>
-              {profile && <div className="text-sm opacity-90">Signed in as {profile.name} ({profile.email})</div>}
-            </div>
-            <div className="flex items-center gap-3">
-              <button className="rounded-full px-3 py-1 text-xs font-semibold bg-white/20 hover:bg-white/30 transition" onClick={()=>setDarkMode(!darkMode)}>
-                {darkMode ? 'Light mode' : 'Dark mode'}
-              </button>
-              <div className="text-sm bg-white/15 px-3 py-1 rounded-full">
-                <span className="font-semibold">{pendingCount}</span> pending · <span className="font-semibold">{completedCount}</span> done
+        <header className="mb-8 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white relative animate-fadeIn">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 opacity-0 hover:opacity-100 transition-opacity duration-700"></div>
+          <div className="relative px-6 py-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">📝</span>
+                <p className="text-xs uppercase tracking-[0.3em] opacity-90 font-bold">Notes Dashboard</p>
               </div>
-              <button className="bg-white text-blue-700 px-3 py-1 rounded-full font-semibold shadow hover:translate-y-[-1px] transition" onClick={logout}>Logout</button>
+              <h1 className="text-3xl font-extrabold">Stay on top of your tasks</h1>
+              {profile && <div className="text-sm opacity-95 flex items-center gap-2">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/20 font-bold">{profile.name[0].toUpperCase()}</span>
+                <span><strong>{profile.name}</strong> · {profile.email}</span>
+              </div>}
+            </div>
+            <div className="flex items-center gap-3 flex-wrap">
+              <button 
+                className="group rounded-xl px-4 py-2 text-sm font-bold bg-white/20 hover:bg-white/30 backdrop-blur transition-all hover:scale-105 flex items-center gap-2" 
+                onClick={()=>setDarkMode(!darkMode)}
+              >
+                <span className="text-lg">{darkMode ? '☀️' : '🌙'}</span>
+                {darkMode ? 'Light' : 'Dark'}
+              </button>
+              <div className="text-sm bg-white/20 backdrop-blur px-4 py-2 rounded-xl font-semibold flex items-center gap-2 hover:bg-white/30 transition-all">
+                <span className="inline-flex items-center gap-1">
+                  <span className="w-2 h-2 bg-yellow-300 rounded-full animate-pulse"></span>
+                  <span className="font-bold">{pendingCount}</span> pending
+                </span>
+                <span>·</span>
+                <span className="inline-flex items-center gap-1">
+                  <span className="w-2 h-2 bg-green-300 rounded-full"></span>
+                  <span className="font-bold">{completedCount}</span> done
+                </span>
+              </div>
+              <button className="bg-white text-indigo-700 px-5 py-2 rounded-xl font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-2" onClick={logout}>
+                <span>🚪</span> Logout
+              </button>
             </div>
           </div>
         </header>

@@ -2,4 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-html,body,#__next { height: 100%; }
+html {
+  scroll-behavior: smooth;
+}
+
+html, body, #__next { 
+  height: 100%;
+  @apply antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-blue-400 to-indigo-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-blue-500 to-indigo-600;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-blue-200 text-blue-900;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-500;
+}

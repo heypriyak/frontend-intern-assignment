@@ -161,9 +161,7 @@ Frontend can be served via a CDN
 Rate limiting and caching can be added for better performance
 <img width="1912" height="868" alt="Screenshot 2025-12-31 185636" src="https://github.com/user-attachments/assets/f5e7de72-2b6c-4dbe-866b-6161d38c2823" />
 
-
 <img width="1900" height="933" alt="Screenshot 2025-12-31 184936" src="https://github.com/user-attachments/assets/814cc804-c069-4835-b092-9f2a9f63cce2" />
-
 
 👩‍💻 Author
 
